@@ -32,6 +32,30 @@ Update firewall
 
 ```sudo ufw allow samba```
 
+Setup linux user to Samba password
+
+```sudo smbpasswd -a username```
+
+## File permissions
+
+In Linux, everything is a file. Directories are files, devives are files. 
+Only Super user or "root" can access any file.
+
+| Permission | Action | chmod option |
+| --- | --- | --- |
+| read | (view) | r or 4 |
+| write | (edit) | w or 2 |
+| execute | (execute) | x or 1 |
+
+| User | ls output |
+| --- | --- |
+| owner | -rwx------ |
+| group | ----rwx--- |
+| other | -------rwx |
+
+
+
+
 ## Install Plex
 
 - Download ```.deb``` package
