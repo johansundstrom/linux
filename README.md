@@ -53,8 +53,15 @@ Only Super user or "root" can access any file.
 | group | ----rwx--- |
 | other | -------rwx |
 
+Directories have Folder/directory permission
 
+| Permission | Action | chmod option |
+| --- | --- | --- |
+| read | (view contents, i.e. ls command) | r or 4 |
+| write | (create or remove files from dir) | w or 2 |
+| execute | (cd into directory) | x or 1
 
+källa https://help.ubuntu.com/community/FilePermissions
 
 ## Install Plex
 
