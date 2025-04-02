@@ -68,3 +68,42 @@ källa https://help.ubuntu.com/community/FilePermissions
 - Download ```.deb``` package
 - Run ```sudo dpkg -i "deb-package```
 - Go to ```http://127.0.0.1:32400/web```
+
+## Install BIND
+
+Install BIND
+```sudo apt install bind9```
+
+Edit the new zone file ```/etc/bind/db.example.com``` and change localhost. to the FQDN of your server, including the additional . at the end. 
+
+```sudo nano /etc/bind/db.example.com```
+
+```
+;
+; BIND data file for example.com
+;
+$TTL    604800
+@       IN      SOA     example.com. root.example.com. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+
+@       IN      NS      ns.example.com.
+@       IN      A       192.168.1.10
+@       IN      AAAA    ::1
+ns      IN      A       192.168.1.10
+```
+
+Restart BIND9
+```sudo systemctl restart bind9.service```
+
+
+/etc/bind/named.conf.options: Global DNS options
+
+/etc/bind/named.conf.local: For your zones
+
+/etc/bind/named.conf.default-zones: Default zones such as localhost, its reverse, and the root hints
+
+
