@@ -97,6 +97,7 @@ ns      IN      A       192.168.1.10
 ```
 
 Restart BIND9
+
 ```sudo systemctl restart bind9.service```
 
 
