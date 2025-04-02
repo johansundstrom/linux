@@ -101,6 +101,22 @@ Restart BIND9
 
 ```sudo systemctl restart bind9.service```
 
+## Install DHCP
+
+```sudo apt-get install isc-dhcp-server```
+
+Config
+
+```sudo nano -w /etc/dhcp/dhcpd.conf```
+
+Start and stop service
+
+```
+sudo service isc-dhcp-server restart
+sudo service isc-dhcp-server start
+sudo service isc-dhcp-server stop
+```
+
 
 /etc/bind/named.conf.options: Global DNS options
 
