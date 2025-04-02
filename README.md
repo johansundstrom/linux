@@ -71,7 +71,8 @@ källa https://help.ubuntu.com/community/FilePermissions
 
 ## Install BIND
 
-Install BIND
+Install BIND9
+
 ```sudo apt install bind9```
 
 Edit the new zone file ```/etc/bind/db.example.com``` and change localhost. to the FQDN of your server, including the additional . at the end. 
