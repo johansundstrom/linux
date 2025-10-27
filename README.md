@@ -63,6 +63,30 @@ Directories have Folder/directory permission
 
 källa https://help.ubuntu.com/community/FilePermissions
 
+## Permanent IP
+
+```sudo nano /etc/netplan/50-cloud-init.yaml```
+
+```yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s25:
+      dhcp4: no
+      addresses:
+        - 192.168.50.181/24
+      routes:
+        - to: default
+          via: 192.168.50.1
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
+      optional: no
+  version: 2
+```
+
+---
+
 ## Install Plex
 
 - Download ```.deb``` package
