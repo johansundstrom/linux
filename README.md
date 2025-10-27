@@ -65,6 +65,33 @@ källa https://help.ubuntu.com/community/FilePermissions
 
 ## Permanent IP
 
+Identifiera Nätverksinterface
+
+```ip a```
+
+```yaml
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute
+       valid_lft forever preferred_lft forever
+2: enp0s25: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether f8:0f:41:65:37:d3 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.50.181/24 brd 192.168.50.255 scope global enp0s25
+       valid_lft forever preferred_lft forever
+    inet6 fd3d:c9f9:b50c:5da9:fa0f:41ff:fe65:37d3/64 scope global dynamic mngtmpaddr noprefixroute
+       valid_lft 1660sec preferred_lft 1660sec
+    inet6 fe80::fa0f:41ff:fe65:37d3/64 scope link
+       valid_lft forever preferred_lft forever
+3: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default
+    link/ether 66:71:9e:cb:67:62 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+```
+
+Entry 2: enp0s25
+
 ```sudo nano /etc/netplan/50-cloud-init.yaml```
 
 ```yaml
