@@ -151,7 +151,7 @@ Restart BIND9
 
 ```sudo systemctl restart bind9.service```
 
-## Install DHCP
+## Install DHCP Server
 
 ```sudo apt-get install isc-dhcp-server```
 
