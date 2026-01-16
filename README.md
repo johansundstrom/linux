@@ -174,4 +174,44 @@ sudo service isc-dhcp-server stop
 
 /etc/bind/named.conf.default-zones: Default zones such as localhost, its reverse, and the root hints
 
+## Montera nätverksenhet permanent via SMB
 
+* Installera *cifs-utils*
+
+```bash
+sudo apt install cifs-utils
+```
+
+* Förutsättning är en delad mapp med namnet *documents* från källenheten. Mappen delas med SMB-protokollet.
+* Dela gärna med SMB3 i första hand alternativt SMB2 protokollet
+* Skapa en mapp på målenheten (därifrån monteringen görs) med förslagsvis samma namn
+
+```bash
+sudo mkdir -p /mnt/documents
+```
+
+* Testmontera
+
+```bash
+sudo mount -t cifs //192.168.1.50/documents /mnt/documents \
+  -o username=youruser,password=yourpassword,vers=3.0
+```
+
+* testa
+
+```bash
+ls /mnt/documents
+```
+
+* Istället för att lägga lösenord i klartext rekommenderas en credentials-fil
+
+```bash
+sudo nano /etc/samba/creds-documents
+```
+
+* Fyll i följande
+
+```
+username=youruser
+password=yourpassword
+```
