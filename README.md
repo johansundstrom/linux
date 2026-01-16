@@ -197,21 +197,34 @@ sudo mount -t cifs //192.168.1.50/documents /mnt/documents \
   -o username=youruser,password=yourpassword,vers=3.0
 ```
 
-* testa
+Testa
 
 ```bash
 ls /mnt/documents
 ```
 
-* Istället för att lägga lösenord i klartext rekommenderas en credentials-fil
+Istället för att lägga lösenord i klartext rekommenderas en credentials-fil
 
 ```bash
 sudo nano /etc/samba/creds-documents
 ```
 
-* Fyll i följande
+Fyll i följande
 
 ```
 username=youruser
 password=yourpassword
+```
+
+Automatisera via /etc/fstab (montera vid boot)
+
+```bash
+sudo nano /etc/fstab
+```
+
+Fyll i
+
+```bash
+# Synology NAS share
+//192.168.1.50/backup /mnt/nas cifs credentials=/etc/samba/creds-documents,iocharset=utf8,vers=3.0,nofail 0 0
 ```
