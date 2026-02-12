@@ -1,5 +1,14 @@
 # Linux 
 
+## Innehåll
+
+* Samba
+* File permissions
+* Permanent IP
+* Plexmediaserver
+* BIND9
+* DHCP
+* Montera nätverksenhet permanent
 
 ## Install Samba
 
