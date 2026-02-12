@@ -113,11 +113,17 @@ network:
 
 ---
 
-## Install Plex
+## Install Plexmediaserver
 
 - Download ```.deb``` package
-- Run ```sudo dpkg -i "deb-package```
+- Run ```sudo dpkg -i "deb-package"```
 - Go to ```http://127.0.0.1:32400/web```
+
+### Uppgradera Plexmediaserver
+
+- ```sudo apt-get update```
+- ```sudo apt-get upgrade plexmediaserver```
+- ```sudo systemctl restart plexmediaserver```
 
 ## Install BIND
 
