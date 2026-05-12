@@ -9,6 +9,7 @@
 * BIND9
 * DHCP
 * Montera nätverksenhet permanent
+* Autostart vid login via CLI
 
 ## Install Samba
 
@@ -255,4 +256,21 @@ Fyll i
 ```bash
 # Synology NAS share
 //192.168.1.50/backup /mnt/nas cifs credentials=/etc/samba/creds-documents,iocharset=utf8,vers=3.0,nofail 0 0
+```
+## Autostart vid login via CLI
+
+```bash
+nano ~/.profile
+```
+
+Lägg till i slutet på filen
+
+```bash
+/home/username/scripts/autostart.sh
+```
+
+Gör filen ```autostart.sh``` exekverbar
+
+```bash
+chmod +x /home/username/scripts/autostart.sh
 ```
