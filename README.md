@@ -10,6 +10,7 @@
 * DHCP
 * Montera nätverksenhet permanent
 * Autostart vid login via CLI
+* KVM Hypervisor
 
 ## Install Samba
 
@@ -274,3 +275,7 @@ Gör filen ```autostart.sh``` exekverbar
 ```bash
 chmod +x /home/username/scripts/autostart.sh
 ```
+
+## KVM Hypervisor
+
+* Hypervisor med [Home Assistant](https://community.home-assistant.io/t/install-home-assistant-os-with-kvm-on-ubuntu-headless-cli-only/254941)
