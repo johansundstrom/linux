@@ -276,6 +276,22 @@ Gör filen ```autostart.sh``` exekverbar
 chmod +x /home/username/scripts/autostart.sh
 ```
 
-## KVM Hypervisor
+## KVM Hypervisor (Kernel-based Virtual Machine)
+
+List VM's in KVM
+
+```virsh list```
+
+Stäng en VM
+
+```virsh shutdown <VM>```
+
+Starta en VM
+
+```virsh start <VM>```
+
+Reboot VM
+
+```virsh reboot <VM>```
 
 * Hypervisor med [Home Assistant](https://community.home-assistant.io/t/install-home-assistant-os-with-kvm-on-ubuntu-headless-cli-only/254941)
